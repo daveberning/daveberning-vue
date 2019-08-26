@@ -76,6 +76,10 @@
         margin-right: 5rem;
       }
 
+      @media screen and (min-width: 1760px) {
+        margin-right: 0
+      }
+
       @media screen and (min-width: 2000px) {
         max-width: 59%;
       }
