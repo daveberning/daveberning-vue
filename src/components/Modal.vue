@@ -1,7 +1,7 @@
 <template>
   <div class="modal" :class="{ active: isActive }">
     <div class="content">
-      <router-link to="/"><img src="/cancel.svg" alt=""></router-link>
+      <router-link to="/"><img src="images/cancel.svg" alt=""></router-link>
       <slot />
     </div>
   </div>

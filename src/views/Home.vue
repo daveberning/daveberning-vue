@@ -2,7 +2,7 @@
   <div class="component">
     <div class="wrapper">
       <div class="content">
-        <img src="/dave-md-g.png" alt="">
+        <img src="images/dave-md-g.png" alt="">
         <h1>Dave Berning</h1>
         <h2>Developer &amp; Author from Cincinnati, Ohio</h2>
         <router-link to="/about">About <span>Shift + A</span></router-link>

@@ -17,10 +17,10 @@
       </div>
       <div>
         <p>Currently at</p>
-        <img src="/oodle-logo.svg" alt="">
+        <img src="images/oodle-logo.svg" alt="">
         <hr>
         <p>B.F.A in Electronic Media from</p>
-        <img src="/university-of-cincinnati-vector-logo.svg" alt="">
+        <img src="images/university-of-cincinnati-vector-logo.svg" alt="">
       </div>
     </div>
   </Modal>

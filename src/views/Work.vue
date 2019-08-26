@@ -3,19 +3,19 @@
     <h1>Work</h1>
     <div class="grid">
       <section>
-        <img src="/drees-logo.svg" alt="">
+        <img src="images/drees-logo.svg" alt="">
       </section>
       <section>
-        <img src="/university-of-cincinnati-vector-logo.svg" alt="">
+        <img src="images/university-of-cincinnati-vector-logo.svg" alt="">
       </section>
       <section>
-        <img src="/oodle-logo.svg" alt="">
+        <img src="images/oodle-logo.svg" alt="">
       </section>
       <section>
-        <img src="/drees-logo.svg" alt="">
+        <img src="images/drees-logo.svg" alt="">
       </section>
       <section>
-        <img src="/drees-logo.svg" alt="">
+        <img src="images/drees-logo.svg" alt="">
       </section>
     </div>
   </Modal>
