@@ -22,9 +22,17 @@
     data() {
       return {
         writings: [
+          {title: `Vue.js: Understanding It's Tools and Ecosystem`, date: `October 2018`, featured: true},
+          {title: `Creating Interfaces With Bulma`, date: `February 2018`, featured: true},
           {title: `Getting Started with Server-Side Rendering Using Nuxt.js`, date: `April 2018`},
           {title: `Implementing an Infinite Scroll with Vue.js`, date: `April 2018`},
           {title: `Integrating and Using CSS Frameworks with Vue.js`, date: `April 2018`},
+          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
+          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
+          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
+          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
+          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
+          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
           {title: `Using Chart.js with Vue.js`, date: `April 2018`}
         ]
       };
@@ -52,6 +60,7 @@
       p {
         margin: 2rem 0 0 0;
         font-style: italic;
+        color: lighten(#3e9e91, 20%);
       }
     }
   }

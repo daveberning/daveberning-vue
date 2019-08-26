@@ -3,17 +3,17 @@
     <h1>About Dave</h1>
     <div class="grid">
       <div class="modal-content">
-        <p>Dave Berning has been a front-end web developer for more than six years. He graduated from the
+        <p>Dave Berning has been a front-end web developer for more than {{ years }} years. He graduated from the
           University of Cincinnati where he learned to create interactive websites with HTML, CSS, and JavaScript. Dave
           currently builds rich progressive web applications with Vue.js. He is also a writer for Alligator.io and
           organizer of the CodePen Cincinnati meetups where he lectures and leads workshops about the latest
           technologies in the
-          field. You can find him almost anywhere on the Internet as @daveberning.</p>
+          field. You can find him almost anywhere on the World Wide Web as @daveberning.</p>
 
         <p>I have worked with several companies over the years, each one giving me valuable experience and new skills.
           Some of these companies include KalioCommerce, Hobsons Educational Solutions, Upright Communications, and
-          Drees
-          Homes. My philosophy is that every great website should have a simple UI and be written with clean code.</p>
+          Drees Homes. My philosophy is that every great website should have a simple UI and be written with clean
+          code.</p>
       </div>
       <div>
         <p>Currently at</p>
@@ -28,6 +28,8 @@
 
 <script lang="ts">
   import Vue from 'vue';
+  // @ts-ignore
+  import numberToWords from 'number-to-words';
   import Modal from '@/components/Modal.vue';
 
   export default Vue.extend({
@@ -35,10 +37,11 @@
     components: {
       Modal
     },
-    data() {
-      return {
-        isActive: false as boolean
-      };
+    computed: {
+      years(): string {
+        const years: number = new Date().getFullYear() - 2012;
+        return numberToWords.toWords(years);
+      }
     }
   });
 </script>

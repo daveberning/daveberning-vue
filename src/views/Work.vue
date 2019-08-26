@@ -52,8 +52,17 @@
       border-radius: 4px;
       display: flex;
 
+      & > div {
+        width: 100%;
+      }
+
+      p {
+        margin: 1rem 0 0 0;
+        text-align: center;
+      }
+
       img {
-        width: 50%;
+        width: 60%;
         height: auto;
         display: block;
         margin: 0 auto;

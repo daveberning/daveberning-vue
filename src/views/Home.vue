@@ -70,6 +70,12 @@
     }
 
     .content {
+      margin-right: 0;
+
+      @media screen and (min-width: 1400px) {
+        margin-right: 5rem;
+      }
+
       @media screen and (min-width: 2000px) {
         max-width: 59%;
       }
@@ -86,6 +92,7 @@
       @media screen and (min-width: 1410px) {
         font-size: 8rem;
         max-width: 660px;
+        left: 7rem;
       }
 
       @media screen and (min-width: 1760px) {
