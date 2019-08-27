@@ -78,7 +78,7 @@
       em {
         font-style: italic;
         font-weight: 600;
-        letter-spacing: .5px;
+        letter-spacing: .25px;
       }
 
       &.right {
