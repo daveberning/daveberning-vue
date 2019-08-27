@@ -19,7 +19,7 @@
     name: 'Navigation' as string,
     props: {
       navigation: {
-        type: Object as () => NavigationItem[],
+        type: Array as () => NavigationItem[],
         required: true
       }
     }

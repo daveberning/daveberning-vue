@@ -5,7 +5,16 @@
         <img src="images/dave-md-g.png" alt="">
         <h1>{{ about.firstName }} {{ about.lastName }}</h1>
         <h2>{{ about.role }} from {{ about.city }}, {{ about.state }}</h2>
+        <p class="left">Photography by Jason Bayer</p>
+        <p class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</p>
         <Navigation :navigation="navigation" />
+        <ul>
+          <li v-for="media in socialMedia" :key="media.icon">
+            <a :href="media.href">
+              <i :class="`fab fa-${media.icon}`"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -14,8 +23,9 @@
 <script lang="ts">
   import Vue from 'vue';
   import Navigation from '@/components/Navigation.vue';
-  import {About, NavigationItem, VueInstance} from '@/types';
+  import {About, NavigationItem, SocialMedia, VueInstance} from '@/types';
   import {about} from '@/data/about';
+  import {socialMedia} from '@/data/social-media';
   import {navigation} from '@/data/navigation';
 
   export default Vue.extend({
@@ -26,7 +36,8 @@
     data() {
       return {
         navigation: navigation as NavigationItem[],
-        about: about as About
+        about: about as About,
+        socialMedia: socialMedia as SocialMedia[]
       };
     },
     mounted(): void {
@@ -38,9 +49,9 @@
         if (e.keyCode === 87 && e.ctrlKey) {
           self.$router.push('/work');
         } // Shift + W
-        if (e.keyCode === 66 && e.ctrlKey) {
+        if (e.keyCode === 71 && e.ctrlKey) {
           self.$router.push('/writing');
-        } // Shift + B
+        } // Shift + G
         if (e.keyCode === 67 && e.ctrlKey) {
           self.$router.push('/contact');
         } // Shift + C
@@ -53,6 +64,35 @@
   .component {
     position: fixed;
     top: 0 !important;
+  }
+
+  p {
+    position: absolute;
+    font-size: .75rem;
+    color: #cccccc;
+    bottom: 1rem;
+  }
+
+  p.left {
+    left: 1rem;
+  }
+
+  p.right {
+    right: 1rem;
+  }
+
+  ul li {
+    display: inline-block;
+    margin: 2.5rem 1rem 0 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      color: #334241;
+      font-size: 1.5rem;
+    }
   }
 
   .wrapper {

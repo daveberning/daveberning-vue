@@ -1,9 +1,10 @@
 <template>
   <div class="modal" :class="{ active: isActive }">
     <div class="content">
-      <router-link to="/"><img src="images/cancel.svg" alt=""></router-link>
+      <router-link to="/" class="close"><img src="images/cancel.svg" alt=""></router-link>
       <slot />
     </div>
+    <p class="right">Copyright &copy 2012 - {{ new Date().getFullYear() }}. All Rights Reserved.</p>
   </div>
 </template>
 
@@ -53,7 +54,7 @@
       position: relative;
     }
 
-    a {
+    .close {
       background: none;
       color: #ffffff;
       position: absolute;
@@ -73,6 +74,22 @@
       line-height: 3rem;
       font-weight: 300;
       margin-bottom: 2rem;
+
+      em {
+        font-style: italic;
+        font-weight: 600;
+        letter-spacing: .5px;
+      }
+
+      &.right {
+        position: absolute;
+        right: 4rem;
+        bottom: 1rem;
+        font-size: .75rem;
+        margin: 0;
+        color: lighten(#3e9e91, 20%);
+        line-height: 1rem;
+      }
     }
   }
 </style>

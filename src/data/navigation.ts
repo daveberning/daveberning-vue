@@ -14,7 +14,7 @@ export const navigation: NavigationItem[] = [
   {
     text: 'Writing',
     to: '/writing',
-    keyboard: 'Ctrl + B'
+    keyboard: 'Ctrl + G'
   },
   {
     text: 'Contact',

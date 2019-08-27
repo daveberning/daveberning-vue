@@ -45,4 +45,5 @@ export interface Writing {
   date: string;
   featured?: boolean;
   type: string;
+  to: string;
 }

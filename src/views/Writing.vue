@@ -2,13 +2,13 @@
   <Modal>
     <h1>Writing</h1>
     <div class="grid">
-      <section v-for="(writing, i) in writings" :key="i">
+      <a v-for="(writing, i) in writings" :href="writing.to">
         <h2>{{ writing.title }}</h2>
         <ul>
           <li>{{ writing.date }}</li>
-          <li>{{ writing.type }}</li>
+          <li><span :class="{ book: writing.type.toLowerCase() === 'book' }">{{ writingType(writing) }}</span></li>
         </ul>
-      </section>
+      </a>
     </div>
   </Modal>
 </template>
@@ -28,6 +28,11 @@
       return {
         writings: writing as Writing[]
       };
+    },
+    methods: {
+      writingType(writing: Writing): string {
+        return writing.type.toLowerCase() === 'book' ? 'Buy Book on Amazon' : writing.type;
+      }
     }
   });
 </script>
@@ -39,19 +44,20 @@
     grid-column-gap: 3rem;
     grid-row-gap: 3rem;
 
-    section {
+    a {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto;
       grid-column: span 1;
       background: darken(#3e9e91, 7%);
-      padding: 2.5rem 2rem;
+      padding: 2rem 2rem 2.5rem 2rem;
       border-radius: 4px;
+      text-decoration: none;
 
       h2 {
         line-height: 2.5rem;
         grid-column: span 2;
-        padding-bottom: 1rem;
+        padding-bottom: 3rem;
       }
 
       ul {
@@ -63,16 +69,28 @@
         width: 100%;
       }
 
+      ul li,
+      ul li span {
+        color: lighten(#3e9e91, 20%);
+      }
+
       ul li {
         margin: 2rem 0 0 0;
         font-style: italic;
-        color: lighten(#3e9e91, 20%);
         grid-column: span 1;
 
         &:last-child {
           text-align: right;
         }
       }
+    }
+
+    .book {
+      background: #3e9e91;
+      display: inline-block;
+      padding: .5rem 1rem;
+      color: #ffffff;
+      border-radius: 4px;
     }
   }
 </style>
