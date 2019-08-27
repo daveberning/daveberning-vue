@@ -4,7 +4,10 @@
     <div class="grid">
       <section v-for="(writing, i) in writings" :key="i">
         <h2>{{ writing.title }}</h2>
-        <p>{{ writing.date }}</p>
+        <ul>
+          <li>{{ writing.date }}</li>
+          <li>{{ writing.type }}</li>
+        </ul>
       </section>
     </div>
   </Modal>
@@ -13,28 +16,17 @@
 <script lang="ts">
   import Vue from 'vue';
   import Modal from '@/components/Modal.vue';
+  import {Writing} from '@/types';
+  import {writing} from '@/data/writing';
 
   export default Vue.extend({
-    name: 'About',
+    name: 'Writing' as string,
     components: {
       Modal
     },
     data() {
       return {
-        writings: [
-          {title: `Vue.js: Understanding It's Tools and Ecosystem`, date: `October 2018`, featured: true},
-          {title: `Creating Interfaces With Bulma`, date: `February 2018`, featured: true},
-          {title: `Getting Started with Server-Side Rendering Using Nuxt.js`, date: `April 2018`},
-          {title: `Implementing an Infinite Scroll with Vue.js`, date: `April 2018`},
-          {title: `Integrating and Using CSS Frameworks with Vue.js`, date: `April 2018`},
-          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
-          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
-          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
-          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
-          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
-          {title: `Using Chart.js with Vue.js`, date: `April 2018`},
-          {title: `Using Chart.js with Vue.js`, date: `April 2018`}
-        ]
+        writings: writing as Writing[]
       };
     }
   });
@@ -48,6 +40,9 @@
     grid-row-gap: 3rem;
 
     section {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
       grid-column: span 1;
       background: darken(#3e9e91, 7%);
       padding: 2.5rem 2rem;
@@ -55,12 +50,28 @@
 
       h2 {
         line-height: 2.5rem;
+        grid-column: span 2;
+        padding-bottom: 1rem;
       }
 
-      p {
+      ul {
+        padding: .5rem 2rem;
+        position: absolute;
+        bottom: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+      }
+
+      ul li {
         margin: 2rem 0 0 0;
         font-style: italic;
         color: lighten(#3e9e91, 20%);
+        grid-column: span 1;
+
+        &:last-child {
+          text-align: right;
+        }
       }
     }
   }

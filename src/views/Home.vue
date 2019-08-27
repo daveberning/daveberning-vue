@@ -3,12 +3,9 @@
     <div class="wrapper">
       <div class="content">
         <img src="images/dave-md-g.png" alt="">
-        <h1>Dave Berning</h1>
-        <h2>Developer &amp; Author from Cincinnati, Ohio</h2>
-        <router-link to="/about">About <span>Shift + A</span></router-link>
-        <router-link to="/work">Work <span>Shift + W</span></router-link>
-        <router-link to="/writing">Writing <span>Shift + B</span></router-link>
-        <router-link to="/contact">Contact <span>Shift + C</span></router-link>
+        <h1>{{ about.firstName }} {{ about.lastName }}</h1>
+        <h2>{{ about.role }} from {{ about.city }}, {{ about.state }}</h2>
+        <Navigation :navigation="navigation" />
       </div>
     </div>
   </div>
@@ -16,29 +13,37 @@
 
 <script lang="ts">
   import Vue from 'vue';
-  import HelloWorld from '@/components/HelloWorld.vue';
+  import Navigation from '@/components/Navigation.vue';
+  import {About, NavigationItem, VueInstance} from '@/types';
+  import {about} from '@/data/about';
+  import {navigation} from '@/data/navigation';
 
   export default Vue.extend({
-    name: 'home',
+    name: 'Home' as string,
     components: {
-      HelloWorld
+      Navigation
     },
-    mounted() {
-      const self = this;
-      window.addEventListener('keyup', function(event) {
-        if (event.keyCode === 65 && event.shiftKey) {
+    data() {
+      return {
+        navigation: navigation as NavigationItem[],
+        about: about as About
+      };
+    },
+    mounted(): void {
+      const self: VueInstance = this;
+      window.addEventListener('keyup', function(e: KeyboardEvent) {
+        if (e.keyCode === 65 && e.ctrlKey) {
           self.$router.push('/about');
         } // Shift + A
-        if (event.keyCode === 87 && event.shiftKey) {
+        if (e.keyCode === 87 && e.ctrlKey) {
           self.$router.push('/work');
         } // Shift + W
-        if (event.keyCode === 66 && event.shiftKey) {
+        if (e.keyCode === 66 && e.ctrlKey) {
           self.$router.push('/writing');
         } // Shift + B
-        if (event.keyCode === 67 && event.shiftKey) {
+        if (e.keyCode === 67 && e.ctrlKey) {
           self.$router.push('/contact');
         } // Shift + C
-
       });
     }
   });
@@ -106,42 +111,6 @@
       @media screen and (min-width: 2000px) {
         max-width: 36%;
       }
-    }
-  }
-
-  a {
-    border: 2px solid #334241;
-    color: #334241;
-    padding: .75rem 2rem 1.5rem 2rem;
-    border-radius: 100px;
-    margin: 2.5rem 1rem 0 0;
-    display: inline-block;
-    text-decoration: none;
-    position: relative;
-
-    &::after {
-      content: '';
-      font-size: .6rem;
-      display: block;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      margin-top: 5px;
-      font-style: italic;
-    }
-
-    & span {
-      font-size: .6rem;
-      display: block;
-      position: absolute;
-      width: 100%;
-      left: 0;
-      margin-top: 5px;
-      font-style: italic;
-    }
-
-    @media screen and (min-width: 2000px) {
-      font-size: 1vw;
     }
   }
 </style>

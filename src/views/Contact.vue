@@ -3,25 +3,13 @@
     <h1>Contact</h1>
     <div class="grid">
       <form action="">
-        <section>
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName">
+        <section v-for="field in fields" :key="field.id">
+          <label :for="field.id">{{ field.label }}</label>
+          <input :type="field.type" :id="field.id">
         </section>
         <section>
-          <label for="firstName">Last Name</label>
-          <input type="text" id="firstName">
-        </section>
-        <section>
-          <label for="firstName">Email</label>
-          <input type="text" id="firstName">
-        </section>
-        <section>
-          <label for="firstName">Phone</label>
-          <input type="text" id="firstName">
-        </section>
-        <section>
-          <label for="firstName">Message</label>
-          <textarea rows="5"></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" rows="5"></textarea>
         </section>
         <button>Send</button>
       </form>
@@ -39,22 +27,23 @@
 <script lang="ts">
   import Vue from 'vue';
   import Modal from '@/components/Modal.vue';
+  import {socialMedia} from '@/data/social-media';
+  import {FormField, SocialMedia} from '@/types';
 
   export default Vue.extend({
-    name: 'About',
+    name: 'Contact' as string,
     components: {
       Modal
     },
     data() {
       return {
-        socialMedia: [
-          {icon: 'twitter', href: ''},
-          {icon: 'github', href: ''},
-          {icon: 'linkedin-in', href: ''},
-          {icon: 'instagram', href: ''},
-          {icon: 'codepen', href: ''},
-          {icon: 'medium-m', href: ''}
-        ]
+        socialMedia: socialMedia as SocialMedia[],
+        fields: [
+          {id: 'firstName', type: 'text', label: 'First Name'},
+          {id: 'lastName', type: 'text', label: 'Last Name'},
+          {id: 'phone', type: 'tel', label: 'Phone Number'},
+          {id: 'email', type: 'email', label: 'Email Address'}
+        ] as FormField[]
       };
     }
   });

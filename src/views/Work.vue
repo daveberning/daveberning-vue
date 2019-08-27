@@ -2,20 +2,8 @@
   <Modal>
     <h1>Work</h1>
     <div class="grid">
-      <section>
-        <img src="images/drees-logo.svg" alt="">
-      </section>
-      <section>
-        <img src="images/university-of-cincinnati-vector-logo.svg" alt="">
-      </section>
-      <section>
-        <img src="images/oodle-logo.svg" alt="">
-      </section>
-      <section>
-        <img src="images/drees-logo.svg" alt="">
-      </section>
-      <section>
-        <img src="images/drees-logo.svg" alt="">
+      <section v-for="work in works" :key="work.name">
+        <img :src="work.icon" alt="">
       </section>
     </div>
   </Modal>
@@ -23,16 +11,18 @@
 
 <script lang="ts">
   import Vue from 'vue';
+  import {works} from '@/data/work';
   import Modal from '@/components/Modal.vue';
+  import {Work} from '@/types';
 
   export default Vue.extend({
-    name: 'About',
+    name: 'Work' as string,
     components: {
       Modal
     },
     data() {
       return {
-        isActive: false as boolean
+        works: works as Work[]
       };
     }
   });

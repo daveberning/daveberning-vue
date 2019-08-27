@@ -2,25 +2,13 @@
   <Modal>
     <h1>About Dave</h1>
     <div class="grid">
-      <div class="modal-content">
-        <p>Dave Berning has been a front-end web developer for more than {{ years }} years. He graduated from the
-          University of Cincinnati where he learned to create interactive websites with HTML, CSS, and JavaScript. Dave
-          currently builds rich progressive web applications with Vue.js. He is also a writer for Alligator.io and
-          organizer of the CodePen Cincinnati meetups where he lectures and leads workshops about the latest
-          technologies in the
-          field. You can find him almost anywhere on the World Wide Web as @daveberning.</p>
-
-        <p>I have worked with several companies over the years, each one giving me valuable experience and new skills.
-          Some of these companies include KalioCommerce, Hobsons Educational Solutions, Upright Communications, and
-          Drees Homes. My philosophy is that every great website should have a simple UI and be written with clean
-          code.</p>
-      </div>
+      <div class="modal-content" v-html="about.bio"></div>
       <div>
         <p>Currently at</p>
-        <img src="images/oodle-logo.svg" alt="">
+        <img :src="about.companyLogo" alt="">
         <hr>
         <p>B.F.A in Electronic Media from</p>
-        <img src="images/university-of-cincinnati-vector-logo.svg" alt="">
+        <img :src="about.almaMaterLogo" alt="">
       </div>
     </div>
   </Modal>
@@ -28,20 +16,19 @@
 
 <script lang="ts">
   import Vue from 'vue';
-  // @ts-ignore
-  import numberToWords from 'number-to-words';
+  import {about} from '@/data/about';
   import Modal from '@/components/Modal.vue';
+  import {About} from '@/types';
 
   export default Vue.extend({
-    name: 'About',
+    name: 'About' as string,
     components: {
       Modal
     },
-    computed: {
-      years(): string {
-        const years: number = new Date().getFullYear() - 2012;
-        return numberToWords.toWords(years);
-      }
+    data() {
+      return {
+        about: about as About
+      };
     }
   });
 </script>

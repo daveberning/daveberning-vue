@@ -9,22 +9,23 @@
 
 <script lang="ts">
   import Vue from 'vue';
+  import {VueInstance} from '@/types';
 
   export default Vue.extend({
-    name: 'HelloWorld',
+    name: 'Modal' as string,
     data() {
       return {
         isActive: true as boolean
       };
     },
-    destroyed() {
+    destroyed(): void {
       this.isActive = false;
     },
-    mounted() {
+    mounted(): void {
       this.isActive = true;
-      const self = this;
-      window.addEventListener('keyup', function(event) {
-        if (event.keyCode === 27) {
+      const self: VueInstance = this;
+      window.addEventListener('keyup', function(e: KeyboardEvent) {
+        if (e.keyCode === 27) {
           self.$router.push('/');
         } // Esc
       });
@@ -32,7 +33,7 @@
   });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   .modal {
     background: #3e9e91;
     height: 100vh;

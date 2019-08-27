@@ -1,0 +1,69 @@
+<template>
+  <nav>
+    <ul>
+      <li v-for="item in navigation" :key="item.to">
+        <router-link :to="item.to">
+          {{ item.text }}
+          <span>{{ item.keyboard }}</span>
+        </router-link>
+      </li>
+    </ul>
+  </nav>
+</template>
+
+<script lang="ts">
+  import Vue from 'vue';
+  import {NavigationItem} from '@/types';
+
+  export default Vue.extend({
+    name: 'Navigation' as string,
+    props: {
+      navigation: {
+        type: Object as () => NavigationItem[],
+        required: true
+      }
+    }
+  });
+</script>
+
+<style scoped lang="scss">
+  nav ul li {
+    display: inline-block;
+
+    a {
+      border: 2px solid #334241;
+      color: #334241;
+      padding: .75rem 2rem 1.5rem 2rem;
+      border-radius: 100px;
+      margin: 2.5rem 1rem 0 0;
+      display: inline-block;
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: '';
+        font-size: .6rem;
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        margin-top: 5px;
+        font-style: italic;
+      }
+
+      & span {
+        font-size: .6rem;
+        display: block;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        margin-top: 5px;
+        font-style: italic;
+      }
+
+      @media screen and (min-width: 2000px) {
+        font-size: 1vw;
+      }
+    }
+  }
+</style>
