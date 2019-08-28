@@ -2,7 +2,11 @@
   <div class="component">
     <div class="wrapper">
       <div class="content">
-        <img src="images/dave-md-g.png" alt="">
+        <picture>
+          <source srcset="images/dave-md-g.png" media="(min-width: 568px)">
+          <img src="images/dave-mobile.jpg" alt="PP">
+        </picture>
+        <!--        <img src="images/dave-md-g.png" alt="">-->
         <h1>{{ about.firstName }} {{ about.lastName }}</h1>
         <h2>{{ about.role }} from {{ about.city }}, {{ about.state }}</h2>
         <p class="left">Photography by Jason Bayer</p>
@@ -66,6 +70,28 @@
     top: 0 !important;
   }
 
+  h1 {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin: 1rem 0 0 0;
+
+    @media screen and (min-width: 1760px) {
+      font-size: 7rem;
+      line-height: 11rem;
+      margin-bottom: 0;
+    }
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+
+    @media screen and (min-width: 1760px) {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+  }
+
   p {
     position: absolute;
     font-size: .75rem;
@@ -75,10 +101,21 @@
 
   p.left {
     left: 1rem;
+    display: none;
+
+    @media screen and (min-width: 1760px) {
+      display: block;
+    }
   }
 
   p.right {
-    right: 1rem;
+    left: 0;
+    right: 0;
+
+    @media screen and (min-width: 1760px) {
+      left: unset;
+      right: 0;
+    }
   }
 
   ul li {
@@ -116,13 +153,15 @@
 
     .content {
       margin-right: 0;
+      width: 100%;
 
       @media screen and (min-width: 1400px) {
         margin-right: 5rem;
+        width: auto;
       }
 
       @media screen and (min-width: 1760px) {
-        margin-right: 0
+        margin-right: 3rem;
       }
 
       @media screen and (min-width: 2000px) {
@@ -131,21 +170,30 @@
     }
 
     img {
-      position: absolute;
-      max-width: 550px;
-      width: 100%;
-      top: 5px;
-      left: 0;
-      -webkit-transform-style: preserve-3d;
+      width: 150px;
+      border-radius: 100%;
+      border: 5px solid #3e9e91;
+
+      @media screen and (min-width: 767px) {
+        position: absolute;
+        max-width: 550px;
+        width: 100%;
+        top: 5px;
+        left: 0;
+        -webkit-transform-style: preserve-3d;
+        border: none;
+        border-radius: unset;
+      }
 
       @media screen and (min-width: 1410px) {
+        display: block;
         font-size: 8rem;
         max-width: 660px;
         left: 7rem;
       }
 
       @media screen and (min-width: 1760px) {
-        left: 10rem;
+        left: 14rem;
       }
 
       @media screen and (min-width: 2000px) {

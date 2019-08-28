@@ -42,7 +42,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 3rem;
-    grid-row-gap: 2rem;
+    grid-row-gap: 1rem;
 
     @media screen and (min-width: 767px) {
       grid-row-gap: 3rem;

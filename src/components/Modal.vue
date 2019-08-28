@@ -109,13 +109,22 @@
       }
 
       &.right {
-        position: absolute;
-        right: 4rem;
-        bottom: 1rem;
+        position: relative;
+        bottom: 0;
+        margin: 1rem 0 0 0;
+        text-align: center;
+        right: 0;
         font-size: .75rem;
-        margin: 0;
         color: lighten(#3e9e91, 20%);
         line-height: 1rem;
+
+        @media screen and (min-width: 767px) {
+          position: absolute;
+          line-height: 3rem;
+          right: 4rem;
+          margin-top: 0;
+          text-align: unset;
+        }
       }
     }
   }

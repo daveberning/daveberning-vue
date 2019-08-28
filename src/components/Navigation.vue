@@ -28,17 +28,28 @@
 
 <style scoped lang="scss">
   nav ul li {
-    display: inline-block;
+    display: block;
+
+    @media screen and (min-width: 767px) {
+      display: inline-block;
+    }
 
     a {
       border: 2px solid #334241;
       color: #334241;
-      padding: .75rem 2rem 1.5rem 2rem;
+      padding: .5rem 2rem 1.25rem 2rem;
       border-radius: 100px;
-      margin: 2.5rem 1rem 0 0;
+      margin: 1.5rem 0 0 0;
       display: inline-block;
       text-decoration: none;
       position: relative;
+      width: 100%;
+
+      @media screen and (min-width: 767px) {
+        width: auto;
+        margin: 2.5rem 1rem 0 0;
+        padding: .75rem 2rem 1.5rem 2rem;
+      }
 
       &::after {
         content: '';
