@@ -36,8 +36,14 @@
     grid-row-gap: 1rem;
 
     @media screen and (min-width: 767px) {
+      grid-column-gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 967px) {
       grid-template-columns: repeat(3, 1fr);
       grid-row-gap: 3rem;
+      grid-column-gap: 3rem;
     }
 
     section {

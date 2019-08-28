@@ -6,5 +6,5 @@ export const socialMedia: SocialMedia[] = [
   {icon: 'linkedin-in', href: ''},
   {icon: 'instagram', href: ''},
   {icon: 'codepen', href: ''},
-  {icon: 'medium-m', href: ''}
+  {icon: 'dev', href: ''}
 ];

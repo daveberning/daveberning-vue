@@ -46,13 +46,15 @@
 
     h1 {
       font-size: 4rem;
+      line-height: 7rem;
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 967px) {
         font-size: 7rem;
+        line-height: 11rem;
       }
     }
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: 967px) {
       padding: 2rem 4rem;
     }
 
@@ -75,7 +77,7 @@
       padding: .5rem 1rem;
       z-index: 9999;
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 967px) {
         top: 15px;
         right: 10px;
       }
@@ -84,7 +86,7 @@
         width: 25px;
         height: 25px;
 
-        @media screen and (min-width: 767px) {
+        @media screen and (min-width: 967px) {
           width: 50px;
           height: 50px;
         }
@@ -97,7 +99,7 @@
       font-weight: 300;
       margin-bottom: 2rem;
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 967px) {
         font-size: 1.5rem;
         line-height: 3rem;
       }
@@ -118,7 +120,7 @@
         color: lighten(#3e9e91, 20%);
         line-height: 1rem;
 
-        @media screen and (min-width: 767px) {
+        @media screen and (min-width: 967px) {
           position: absolute;
           line-height: 3rem;
           right: 4rem;

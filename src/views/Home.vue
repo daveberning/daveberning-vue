@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source srcset="images/dave-md-g.png" media="(min-width: 568px)">
+          <source srcset="images/dave-md-g.png" media="(min-width: 967px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
         <!--        <img src="images/dave-md-g.png" alt="">-->
@@ -75,6 +75,10 @@
     line-height: 4rem;
     margin: 1rem 0 0 0;
 
+    @media screen and (min-width: 812px) {
+      margin: 0;
+    }
+
     @media screen and (min-width: 1760px) {
       font-size: 7rem;
       line-height: 11rem;
@@ -121,6 +125,14 @@
   ul li {
     display: inline-block;
     margin: 2.5rem 1rem 0 0;
+
+    @media screen and (min-width: 812px) {
+      margin: 1rem 1rem 0 0;
+    }
+
+    @media screen and (min-width: 967px) {
+      margin: 2.5rem 1rem 0 0;
+    }
 
     &:last-child {
       margin-right: 0;
@@ -174,7 +186,11 @@
       border-radius: 100%;
       border: 5px solid #3e9e91;
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 812px) {
+        width: 100px;
+      }
+
+      @media screen and (min-width: 967px) {
         position: absolute;
         max-width: 550px;
         width: 100%;

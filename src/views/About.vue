@@ -42,7 +42,7 @@
     & > div:first-child {
       grid-column: span 3;
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 967px) {
         grid-column: span 2;
       }
 
@@ -57,7 +57,7 @@
       padding: 4rem 2rem;
       border-radius: 4px;
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 967px) {
         grid-column: span 1;
       }
 
