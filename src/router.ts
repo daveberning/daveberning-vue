@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import About from './views/About.vue';
+import Work from './views/Work.vue';
+import Writing from './views/Writing.vue';
+import Contact from './views/Contact.vue';
 
 Vue.use(Router);
 
@@ -14,22 +18,22 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      component: () => import('./views/About.vue')
+      component: About
     },
     {
       path: '/work',
       name: 'work',
-      component: () => import('./views/Work.vue')
+      component: Work
     },
     {
       path: '/writing',
       name: 'writing',
-      component: () => import('./views/Writing.vue')
+      component: Writing
     },
     {
       path: '/contact',
       name: 'contact',
-      component: () => import('./views/Contact.vue')
+      component: Contact
     }
   ]
 });
