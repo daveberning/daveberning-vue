@@ -40,9 +40,21 @@
     height: 100vh;
     width: 100vw;
     color: #ffffff !important;
-    padding: 2rem 4rem;
+    padding: 1rem;
     overflow: auto;
     z-index: 10000;
+
+    h1 {
+      font-size: 4rem;
+
+      @media screen and (min-width: 767px) {
+        font-size: 7rem;
+      }
+    }
+
+    @media screen and (min-width: 767px) {
+      padding: 2rem 4rem;
+    }
 
     .content {
       transition-delay: .35s;
@@ -58,22 +70,37 @@
       background: none;
       color: #ffffff;
       position: absolute;
-      top: 15px;
-      right: 10px;
+      top: 0;
+      right: -15px;
       padding: .5rem 1rem;
       z-index: 9999;
 
+      @media screen and (min-width: 767px) {
+        top: 15px;
+        right: 10px;
+      }
+
       img {
-        width: 50px;
-        height: 50px;
+        width: 25px;
+        height: 25px;
+
+        @media screen and (min-width: 767px) {
+          width: 50px;
+          height: 50px;
+        }
       }
     }
 
     p {
-      font-size: 1.5rem;
-      line-height: 3rem;
+      font-size: 1.25rem;
+      line-height: 2.25rem;
       font-weight: 300;
       margin-bottom: 2rem;
+
+      @media screen and (min-width: 767px) {
+        font-size: 1.5rem;
+        line-height: 3rem;
+      }
 
       em {
         font-style: italic;

@@ -52,20 +52,37 @@
 <style lang="scss" scoped>
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+
+    @media screen and (min-width: 767px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
+    grid-column: span 2;
+
+    @media screen and (min-width: 767px) {
+      grid-column: span 1;
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     li {
-      grid-column: span 1;
+      grid-column: span 2;
       background: darken(#3e9e91, 7%);
       border-radius: 4px;
+      padding: 5rem;
+
+      @media screen and (min-width: 767px) {
+        grid-column: span 1;
+        padding: 0;
+      }
 
       i {
         font-size: 4.5rem;
@@ -99,7 +116,11 @@
     grid-template-rows: auto;
 
     section {
-      grid-column: span 2;
+      grid-column: span 4;
+
+      @media screen and (min-width: 767px) {
+        grid-column: span 2;
+      }
     }
 
     section:nth-child(5) {
@@ -107,8 +128,8 @@
     }
 
     button {
-      grid-column: span 1;
-      grid-row-start: 4;
+      grid-column: span 4;
+      grid-row-start: 6;
       display: inline-block;
       border: none;
       background: darken(#3e9e91, 7%);
@@ -117,6 +138,11 @@
       text-align: center !important;
       color: #ffffff !important;
       border-radius: 4px;
+
+      @media screen and (min-width: 767px) {
+        grid-row-start: 4;
+        grid-column: span 1;
+      }
     }
   }
 

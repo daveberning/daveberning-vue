@@ -40,7 +40,11 @@
     grid-column-gap: 3rem;
 
     & > div:first-child {
-      grid-column: span 2;
+      grid-column: span 3;
+
+      @media screen and (min-width: 767px) {
+        grid-column: span 2;
+      }
 
       p {
         text-align: justify;
@@ -48,10 +52,14 @@
     }
 
     & > div:last-child {
-      grid-column: span 1;
+      grid-column: span 3;
       background: darken(#3e9e91, 7%);
       padding: 4rem 2rem;
       border-radius: 4px;
+
+      @media screen and (min-width: 767px) {
+        grid-column: span 1;
+      }
 
       hr {
         margin: 4rem 0 3rem 0;

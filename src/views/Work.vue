@@ -31,9 +31,14 @@
 <style lang="scss" scoped>
   .grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     grid-column-gap: 3rem;
-    grid-row-gap: 3rem;
+    grid-row-gap: 2rem;
+
+    @media screen and (min-width: 767px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-row-gap: 3rem;
+    }
 
     section {
       grid-column: span 1;
