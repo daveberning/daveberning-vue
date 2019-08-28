@@ -44,6 +44,11 @@
     grid-column-gap: 3rem;
     grid-row-gap: 1rem;
 
+    @media screen and (min-width: 768px) {
+      grid-column-gap: 2rem;
+      grid-row-gap: 2rem;
+    }
+
     @media screen and (min-width: 967px) {
       grid-row-gap: 3rem;
     }
@@ -58,12 +63,12 @@
       border-radius: 4px;
       text-decoration: none;
 
-      @media screen and (min-width: 767px) {
+      @media screen and (min-width: 768px) {
         grid-column: span 3;
         grid-column-gap: 1rem;
       }
 
-      @media screen and (min-width: 967px) {
+      @media screen and (min-width: 1025px) {
         grid-column: span 2;
       }
 

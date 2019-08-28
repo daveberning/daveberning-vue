@@ -16,11 +16,13 @@
     name: 'Modal' as string,
     data() {
       return {
-        isActive: true as boolean
+        isActive: true as boolean,
+        bodyClass: 'modal-background' as string
       };
     },
     destroyed(): void {
       this.isActive = false;
+      document.body.classList.remove(this.bodyClass);
     },
     mounted(): void {
       this.isActive = true;
@@ -30,6 +32,7 @@
           self.$router.push('/');
         } // Esc
       });
+      document.body.classList.add(this.bodyClass);
     }
   });
 </script>
@@ -44,6 +47,14 @@
     overflow: auto;
     z-index: 10000;
 
+    @media screen and (min-width: 768px) {
+      padding: 2rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding: 2rem 4rem;
+    }
+
     h1 {
       font-size: 4rem;
       line-height: 7rem;
@@ -52,10 +63,6 @@
         font-size: 7rem;
         line-height: 11rem;
       }
-    }
-
-    @media screen and (min-width: 967px) {
-      padding: 2rem 4rem;
     }
 
     .content {

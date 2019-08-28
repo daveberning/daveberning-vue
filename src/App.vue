@@ -10,7 +10,6 @@
   body {
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-align: center;

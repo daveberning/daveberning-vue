@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="content">
         <picture>
-          <source srcset="images/dave-md-g.png" media="(min-width: 967px)">
+          <source srcset="images/dave-md-g.png" media="(min-width: 1025px)">
           <img src="images/dave-mobile.jpg" alt="PP">
         </picture>
         <!--        <img src="images/dave-md-g.png" alt="">-->
@@ -79,7 +79,7 @@
       margin: 0;
     }
 
-    @media screen and (min-width: 1760px) {
+    @media screen and (min-width: 1025px) {
       font-size: 7rem;
       line-height: 11rem;
       margin-bottom: 0;
@@ -90,7 +90,7 @@
     font-size: 1.5rem;
     line-height: 2.25rem;
 
-    @media screen and (min-width: 1760px) {
+    @media screen and (min-width: 1025px) {
       font-size: 2rem;
       line-height: 2rem;
     }
@@ -118,7 +118,7 @@
 
     @media screen and (min-width: 1760px) {
       left: unset;
-      right: 0;
+      right: 1rem;
     }
   }
 
@@ -167,8 +167,8 @@
       margin-right: 0;
       width: 100%;
 
-      @media screen and (min-width: 1400px) {
-        margin-right: 5rem;
+      @media screen and (min-width: 1025px) {
+        margin-right: 1rem;
         width: auto;
       }
 
@@ -190,26 +190,26 @@
         width: 100px;
       }
 
-      @media screen and (min-width: 967px) {
+      @media screen and (min-width: 1024px) {
+        width: 225px;
+      }
+
+      @media screen and (min-width: 1025px) {
         position: absolute;
-        max-width: 550px;
         width: 100%;
         top: 5px;
-        left: 0;
         -webkit-transform-style: preserve-3d;
         border: none;
         border-radius: unset;
-      }
-
-      @media screen and (min-width: 1410px) {
         display: block;
         font-size: 8rem;
-        max-width: 660px;
-        left: 7rem;
+        max-width: 600px;
+        left: 3rem;
       }
 
       @media screen and (min-width: 1760px) {
         left: 14rem;
+        max-width: 660px;
       }
 
       @media screen and (min-width: 2000px) {

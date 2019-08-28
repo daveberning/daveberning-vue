@@ -47,17 +47,11 @@
 
       @media screen and (min-width: 767px) {
         width: auto;
-        margin: 2.5rem 1rem 0 0;
+        margin: 1rem 1rem 0 0;
         padding: .75rem 2rem 1.5rem 2rem;
       }
 
-      @media screen and (min-width: 767px) {
-        width: auto;
-        margin: 1em 1rem 0 0;
-        padding: .5rem 2rem 1.25rem 2rem;
-      }
-
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 1024px) {
         margin: 2.5rem 1rem 0 0;
         padding: .75rem 2rem 1.5rem 2rem;
       }
